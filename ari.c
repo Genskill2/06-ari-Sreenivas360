@@ -25,6 +25,7 @@ string ari(string s){
 	{
 	case 1:
 		return "Kindergarten";
+break;
 	case 2:
 		return "First/Second Grade";
 	case 3:
