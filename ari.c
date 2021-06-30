@@ -1,49 +1,53 @@
 string ari(string s)
-{ int ch=0,space=0,sentence=0,score;
-string gradelevel;
-    int v=strlen(s);
-    for(int i=0;i<v;i++)
-    {
-        if(isalnum(s[i]))
-        ch++;
-        if(s[i]==' ')
-        space++;
-        if(s[i]=='.'||s[i]=='!'||s[i]=='?')
-        sentence++;
-    }
-score=4.71*(ch/space)+0.5*(space/sentence)-21.43;
-score=(int)score+1;
-if(score==1)
-gradelevel="Kindergarten";
-else if(score==2)
-gradelevel="First/Second Grade";
-else if(score==3)
-gradelevel="Third Grade";
-else if(score==4)
-gradelevel="Fourth Grade";
-else if(score==5)
-gradelevel="Fifth Grade";
-else if(score==6)
-gradelevel="Sixth Grade";
-else if(score==7)
-gradelevel="Seventh Grade";
-else if(score==8)
-gradelevel="Eighth Grade";
-else if(score==9)
-gradelevel="Ninth Grade";
-else if(score==10)
-gradelevel+"Tenth Grade";
-else if(score==11)
-gradelevel="Eleventh Grade";
-else if(score==12)
-gradelevel="Twelfth Grade";
-else if(score==13)
-gradelevel="College Student";
-else 
-gradelevel="Professor";
-return gradelevel;
-
-
-
-    
+{
+	int i = 0;
+	float t = 0;
+	float count1 = 0;
+	float count2 = 0;
+	float count3 = 0;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (isalnum(s[i]))
+			count1++;
+		if (s[i] == ' ')
+			count2++;
+		if (s[i] == '.' || s[i] == '?' || s[i] == '!')
+			count3++;
+	}
+	t = 4.71 * (count1 / count2) + 0.5 * (count2 / count3) - 21.43;
+	int y = t + 1;
+	switch (y)
+	{
+	case 1:
+		return "Kindergarten";
+	case 2:
+		return "First/Second Grade";
+	case 3:
+		return "Third Grade";
+	case 4:
+		return "Fourth Grade";
+	case 5:
+		return "Fifth Grade";
+	case 6:
+		return "Sixth Grade";
+	case 7:
+		return "Seventh Grade";
+	case 8:
+		return "Eighth Grade";
+	case 9:
+		return "Ninth Grade";
+	case 10:
+		return "Tenth Grade";
+	case 11:
+		return "Eleventh Grade";
+	case 12:
+		return "Twelfth grade";
+	case 13:
+		return "College student";
+	case 14:
+		return "Professor";
+	default:
+		break;
+	}
+	return " ";
 }
